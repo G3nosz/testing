@@ -1,0 +1,40 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<link rel="stylesheet" href="~/css/loginPage.css"/>
+
+<body>
+<div class="contact-form">
+    <img src="https://www.apkmirror.com/wp-content/uploads/2017/12/5a3020dca74c5.png" class="avatar">
+    <h2>Log in</h2>
+    <form id="account" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Input.Username"></label>
+            <input asp-for="Input.Username" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label asp-for="Input.Password"></label>
+            <input asp-for="Input.Password" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <div class="checkbox">
+                <input asp-for="Input.RememberMe"/>
+                @Html.DisplayNameFor(m => m.Input.RememberMe)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Log in</button>
+        </div>
+    </form>
+</div>
+</body>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}

@@ -1,0 +1,82 @@
+﻿@page
+@model SVS.Pages.HelpModel
+@{
+    ViewData["Title"] = "Help";
+}
+
+<link rel="stylesheet" href="~/css/HelpPage.css"/>
+<div class="edit-form">
+    <img src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-question-icon.png" class="avatar">
+    @if (User.IsInRole("Admin"))
+    {
+<div class="text">
+    <b class="head2"> >>  Management<br /><br /></b>
+    <b class="head">Where can I find the Admin panel?<br /></b>
+    After logging in, text changes to "Admin". By pressing on it, you will be redirected to the Admin page with a toggleable Admin panel on the left side.<br /><br />
+    <b class="head">How can I add a new account?<br /></b>
+    To add a new account, please open navigation on the left side and press on "Add Account".<br /><br />
+    <b class="head">How can I see the account list?<br /></b>
+    To see the list of created accounts, please open navigation on the left side and press on "Accounts". You can also edit, review, and delete accounts on that page.<br /><br />
+    <b class="head">How can I see the parcel list?<br /></b>
+    To see the list of parcels, please open navigation on the left side and press on "Parcels". You can also edit, review, and delete parcels on that page.<br /><br />
+    <b class="head">How can I create a new parcel?<br /></b>
+    To create a new parcel, please open navigation on the left side and press on "Add Parcel".<br /><br />
+    <b class="head2"> >>  Profile<br /><br /></b>
+    <b class="head">How can I review my account?<br /></b>
+    To review your account, please open navigation on the left side and press on "Profile".<br /><br />
+    <b class="head">How can I change my password?<br /></b>
+    To change your password, please open navigation on the left side and press on "Password".<br /><br />
+    <b class="head">How can I change my email?<br /></b>
+    To change your email, please open navigation on the left side and press on "Email".<br /><br />
+</div>
+    }
+    else if (User.IsInRole("Employee"))
+    {
+<div class="text">
+    <b class="head2"> >>  Management<br /><br /></b>
+    <b class="head">How can I see the parcel list?<br /></b>
+    To see the list of parcels, please open navigation on the left side and press on "Parcels". You can also edit, review, and delete parcels on that page.<br /><br />
+    <b class="head">How can I create a new parcel?<br /></b>
+    To create a new parcel, please open navigation on the left side and press on "Add Parcel".<br /><br />
+    <b class="head2"> >>  Profile<br /><br /></b>
+    <b class="head">How can I review my account?<br /></b>
+    To review your account, please open navigation on the left side and press on "Profile".<br /><br />
+    <b class="head">How can I change my password?<br /></b>
+    To change your password, please open navigation on the left side and press on "Password".<br /><br />
+    <b class="head">How can I change my email?<br /></b>
+    To change your email, please open navigation on the left side and press on "Email".<br /><br />
+</div>
+    }
+    else if (User.IsInRole("Driver"))
+    {
+<div class="text">
+    <b class="head2"> >>  Management<br /><br /></b>
+    <b class="head">How can I see the parcel list?<br /></b>
+    To see the list of parcels, please open navigation on the left side and press on "Parcels". You can also edit the parcel's status on that page.<br /><br />
+    <b class="head">What does 'Waiting' / 'Delivering' mean?<br /></b>
+    This is called the Driver's status. You can change it by pressing on it. It's used so that when parcels are waiting for a free driver, it wouldn't assign to an already busy driver. When status is set to Waiting, it will automatically fill the parcels list to deliver. When the list is full or the driver starts to deliver, please change the status to Delivering.<br /><br />
+
+    <b class="head2"> >>  Profile<br /><br /></b>
+    <b class="head">How can I review my account?<br /></b>
+    To review your account, please open navigation on the left side and press on "Profile".<br /><br />
+    <b class="head">How can I change my password?<br /></b>
+    To change your password, please open navigation on the left side and press on "Password".<br /><br />
+    <b class="head">How can I change my email?<br /></b>
+    To change your email, please open navigation on the left side and press on "Email".<br /><br />
+</div>
+    }
+    else
+    {
+<div class="text">
+    <b class="head">How to track a parcel?<br /></b>
+    You can track your parcel from our homepage. In order to track a parcel, you must enter the tracking code. Request the tracking code from the Sender and track your parcel in real time.<br /><br />
+    <b class="head">I have an account. How I can login?<br /></b>
+     You can login by pressing Login in the navigation at the top. After logging in, there will be toggleable side navigation on the left side.<br />
+</div>
+    }
+
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

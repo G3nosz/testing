@@ -1,0 +1,53 @@
+﻿@page
+@model SVS.Areas.Identity.Pages.Account.Manage.Storage.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<link rel="stylesheet" href="~/css/detailParcel.css"/>
+<div class="edit-form">
+    <img src="https://www.pngfind.com/pngs/m/535-5350732_ttap-order-form-order-icon-png-blue-transparent.png" class="avatar">
+    <h2>Details</h2>
+    <form method="post">
+        <dl class="grid-dl">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Parcel.Weight)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Parcel.Weight) kg
+            </dd>
+            <dt class="col-sm-10">
+                L x W x H:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Parcel.Length) x @Html.DisplayFor(model => model.Parcel.Width) x @Html.DisplayFor(model => model.Parcel.Height)
+
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Parcel.Fragile):
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IsFragile)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Parcel.Status):
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Parcel.Status)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Parcel.Driver):
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.fullName)
+            </dd>
+        </dl>
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </form>
+</div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

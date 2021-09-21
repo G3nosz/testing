@@ -1,0 +1,261 @@
+﻿@page
+@model SVS.Areas.Identity.Pages.Account.Manage.AccountsModel
+@{
+    ViewData["Title"] = "Accounts";
+}
+<!-- Temp color-->
+<style>
+    .account-container {
+        height: auto;
+        left: -10%;
+        position: absolute;
+        top: -10vh;
+    }
+
+    .btn {
+        background: rgba(81, 104, 173, 0.95);
+        border: 2px solid rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        display: inline-block;
+        height: auto;
+        outline: none;
+        width: auto;
+    }
+
+    #pagination-wrapper {
+        background: rgba(6, 26, 87, 0.95);
+        border: 3px solid rgba(17, 46, 132, 0.95);
+        border-radius: 5px;
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .btn:hover { background: rgba(110, 133, 201, 0.95); }
+
+    .btn:focus { box-shadow: none; }
+
+    .select-css {
+        background: transparent;
+        background: rgba(6, 26, 87, 0.95);
+        border: 3px solid rgba(17, 46, 132, 0.95);
+        color: white;
+        font-family: 'Lato', sans-serif;
+        height: 40px;
+        transform: translate(-15%, -20%);
+        width: 100px;
+    }
+
+    .select-css:focus {
+        background-color: rgba(6, 26, 87, 0.95);
+        color: white;
+    }
+
+    .table {
+        background: rgba(20, 73, 128, 0.9);
+        border-collapse: collapse;
+        border-radius: 10px;
+        color: white;
+        overflow: hidden;
+    }
+
+    .table th { cursor: pointer; }
+
+
+    .table .th-sort-asc:after { content: "\25b4"; }
+
+    .table .th-sort-desc:after { content: "\25be"; }
+
+    .table .th-sort-asc,
+    .table .th-sort-desc { background: rgba(35, 65, 158, 0.95); }
+
+    table, td, th {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        min-width: 120px;
+    }
+
+    .table .action { color: rgb(134, 174, 219); }
+
+    .table .names {
+        background: rgba(18, 43, 120, 0.95);
+        text-align: center;
+    }
+
+
+    .table .results { color: rgb(204, 232, 255); }
+
+    .table .delete { color: rgb(255, 107, 107); }
+</style>
+
+<div class="account-container">
+    <div class="container" style="margin-top: 35px">
+        <div class="form-group">
+            <select name="state" id="maxRows" class="select-css">
+                <option value="5000">Show All</option>
+                <option value="5">5</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="75">75</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+        <tr class="names">
+            <th>
+                User
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Role
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.Users)
+        {
+            <tr class="results">
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Model.GetRole(item)
+                </td>
+                <td>
+                    @Model.GetName(item)
+                </td>
+                <td>
+                    <a class="action" asp-page="./EditAccount" asp-route-id="@item.Id">Edit</a>
+                    <span>|</span>
+                    <a class="delete" onclick="return confirm('Delete User? @Model.GetName(item)')"
+                       asp-page="./DeleteAccount" asp-route-id="@item.Id">
+                        Delete
+                    </a>
+
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <div class="container">
+        <div id="pagination-wrapper" style="display: none"></div>
+    </div>
+</div>
+
+<script>
+    var state = {
+        'page': 1,
+        'row': 5
+    };
+    var table = ".table";
+
+    $('#maxRows').on('change',
+        function() {
+            var trNum = 0;
+            var maxRows = parseInt($(this).val());
+
+            var totalRows = $(table + ' tbody tr').length;
+            state.row = maxRows;
+            $(table + ' tr:gt(0)').each(function() {
+                trNum++;
+                if (trNum > maxRows) {
+                    $(this).hide();
+                }
+                if (trNum <= maxRows) {
+                    $(this).show();
+                }
+            });
+
+            pageButtons(Math.ceil(totalRows / maxRows));
+        });
+
+    function pageButtons(pages) {
+        var wrapper = document.getElementById('pagination-wrapper');
+        wrapper.innerHTML = '';
+        wrapper.style.visibility = "hidden";
+        if (pages === 1) {
+            return;
+        }
+        wrapper.style.visibility = "visible";
+        var sum = 0;
+        for (var page = 1; page <= pages; page++) {
+            wrapper.style.display = "block";
+            wrapper.innerHTML += `<button value=${page} class="page btn btn-sm btn-info">${page}</button>`;
+        }
+        var test = document.getElementsByClassName("btn");
+
+        for (var i = 1; i < test.length; i++) {
+            sum += parseInt(test[i].offsetWidth);
+        }
+        sum += 30;
+        wrapper.style.width = sum + "px";
+        $('.page').on('click',
+            function() {
+                $('#table-body').empty();
+
+                state.page = Number($(this).val());
+                var trIndex = 0;
+                $(table + ' tr:gt(0)').each(function() {
+                    trIndex++;
+                    if (trIndex > (state.row * state.page) || trIndex <= ((state.row * state.page) - state.row)) {
+                        $(this).hide();
+                    } else {
+                        $(this).show();
+                    }
+                });
+            });
+
+    }
+
+    function sortTableByColumn(table, column, asc = true) {
+        var dirModifier = asc ? 1 : -1;
+        var tBody = table.tBodies[0];
+        var rows = Array.from(tBody.querySelectorAll("tr"));
+
+        // Sort each row
+
+
+        var sortedRows = rows.sort((a, b) => {
+            var aColText = a.querySelector(`td:nth-child(${column + 1})`).textContent.trim().toLowerCase();
+            var bColText = b.querySelector(`td:nth-child(${column + 1})`).textContent.trim().toLowerCase();
+            return aColText > bColText ? (1 * dirModifier) : (-1 * dirModifier);
+        });
+
+        // Remove all existing TRs from the table
+        while (tBody.firstChild) {
+            tBody.removeChild(tBody.firstChild);
+        }
+
+        // Re-add the newly sorted rows
+        tBody.append(...sortedRows);
+
+        // Remember how the column is currently sorted
+        table.querySelectorAll("th").forEach(th => th.classList.remove("th-sort-asc", "th-sort-desc"));
+        table.querySelector(`th:nth-child(${column + 1})`).classList.toggle("th-sort-asc", asc);
+        table.querySelector(`th:nth-child(${column + 1})`).classList.toggle("th-sort-desc", !asc);
+    }
+
+    document.querySelectorAll(".table th").forEach(headerCell => {
+        headerCell.addEventListener("click",
+            () => {
+                var tableElement = headerCell.parentElement.parentElement.parentElement;
+                var headerIndex = Array.prototype.indexOf.call(headerCell.parentElement.children, headerCell);
+                var currentIsAscending = headerCell.classList.contains("th-sort-asc");
+
+                sortTableByColumn(tableElement, headerIndex, !currentIsAscending);
+            });
+    });
+
+</script>

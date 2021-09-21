@@ -1,0 +1,137 @@
+﻿#check {
+    display: none;
+    position: fixed;
+}
+
+label #btn, label #cancel {
+    background: rgba(58, 65, 120, 0.7);
+    border-bottom-right-radius: 3px;
+    cursor: pointer;
+    position: absolute;
+    position: fixed;
+    top: 0px;
+}
+
+label #btn {
+    color: white;
+    font-size: 35px;
+    left: 20px;
+    padding: 6px 12px;
+    top: 20px;
+    transition: all .4s;
+}
+
+label #cancel {
+    font-size: 30px;
+    left: 0px;
+    opacity: 0;
+    padding: 5px 9px;
+    transition: all .5s ease;
+    z-index: 1111;
+}
+
+#check:checked ~ .sidenav { left: 0; }
+
+#check:checked ~ label #btn {
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#waiting {
+    background: rgba(255, 0, 0, 0.39);
+    border: 1px solid rgba(247, 112, 159, 0.5);
+}
+#delivering {
+    background: rgba(0, 255, 20, 0.39);
+    border: 1px solid rgba(112, 247, 113, 0.5);
+}
+
+#check:checked ~ label #cancel {
+    left: 250px;
+    opacity: 1;
+}
+
+.logo { transition: all .5s; }
+
+main { transition: all .5s; }
+
+.sidenav {
+    background-color: rgba(39, 44, 83, 0.9);
+    height: 100%;
+    left: -250px;
+    overflow-x: hidden;
+    padding-top: 0px;
+    position: fixed;
+    top: 0;
+    transition: all .5s ease;
+    width: 250px;
+    z-index: 1;
+}
+
+.sidenav .management {
+    background: #464f8d;
+    border-bottom: 4px solid rgba(134, 112, 247, 0.5);
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    width: 250px;
+}
+
+.sidenav a {
+    border-bottom: 1px solid rgba(218, 213, 243, 0.29);
+    color: #dbd7ee;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+}
+
+.sidenav .profile-settings {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    order: 1;
+    padding-bottom: 50px;
+    position: absolute;
+    width: 250px;
+}
+
+.sidenav .profile-settings .profileSet {
+    background: #464f8d;
+    border-bottom: 4px solid rgba(134, 112, 247, 0.5);
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    width: 250px;
+}
+
+.sidenav .btn {
+    background: rgba(148, 34, 66, 0.7);
+    bottom: 0;
+    color: #bdb8d7;
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    height: 50px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    width: 250px;
+}
+
+.sidenav .btn:hover {
+    background: rgba(194, 28, 76, 0.9);
+    color: #d6d1eb;
+}
+
+.sidenav a:hover {
+    background: #6a6097;
+    color: #d6d1eb;
+}

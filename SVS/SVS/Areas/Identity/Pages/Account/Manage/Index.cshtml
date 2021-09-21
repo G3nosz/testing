@@ -1,0 +1,72 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+<style>
+    .profile-container {
+        background: rgba(6, 26, 87, 0.95);
+        border-image: linear-gradient(to bottom, rgb(41, 151, 237), rgba(0, 0, 0, 0)) 1 100%;
+        border-style: solid;
+        border-width: 5px;
+        box-sizing: border-box;
+        height: auto;
+        padding: 50px 40px;
+        transform: translate(0%, -10%);
+        width: 450px;
+    }
+
+    label { font-size: 20px; }
+
+    h2 {
+        color: #fff;
+        margin: 0;
+        padding: 0 0 20px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .profile-container input {
+        margin-bottom: 20px;
+        outline: none;
+        width: 100%;
+    }
+
+    .profile-container input[type="text"],
+    .profile-containerinput[type="password"],
+    .profile-containerinput[type="email"],
+    .profile-container input[type="tel"] {
+        background: transparent;
+        background-color: none;
+        border: none;
+        border-bottom: 1px solid #fff;
+        color: rgb(204, 232, 255);
+        font-size: 16px;
+        height: 40px;
+        margin-bottom: 20px;
+        outline: none;
+        width: 100%;
+    }
+</style>
+
+<div class="profile-container">
+    <h2>@ViewData["Title"]</h2>
+    <form id="profile-form" method="post">
+        <div class="form-group">
+            <label asp-for="Username"></label>
+            <input asp-for="Username" class="form-control" disabled/>
+            <label asp-for="FirstName">First Name</label>
+            <input asp-for="FirstName" class="form-control" disabled/>
+            <label asp-for="LastName">Last Name</label>
+            <input asp-for="LastName" class="form-control" disabled/>
+            <label asp-for="PhoneNumber">Phone Number</label>
+            <input asp-for="PhoneNumber" class="form-control" disabled/>
+            <label asp-for="Email">E. Mail</label>
+            <input asp-for="Email" class="form-control" disabled/>
+            <label asp-for="Role">Role</label>
+            <input asp-for="Role" class="form-control" disabled/>
+        </div>
+    </form>
+</div>

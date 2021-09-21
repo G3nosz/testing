@@ -1,0 +1,56 @@
+﻿@page
+@model SVS.Areas.Identity.Pages.Account.Manage.Storage.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<link rel="stylesheet" href="~/css/editParcel.css"/>
+<div class="edit-form">
+    <img src="https://www.pngfind.com/pngs/m/535-5350732_ttap-order-form-order-icon-png-blue-transparent.png" class="avatar">
+    <h2>Edit Parcel</h2>
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Parcel.ID"/>
+        <input type="hidden" asp-for="Parcel.Number"/>
+        @if (User.IsInRole("Admin") || User.IsInRole("Employee"))
+        {
+            <div class="form-group">
+                <label asp-for="Parcel.Weight" class="control-label"></label>
+                <input asp-for="Parcel.Weight" class="form-control"/>
+                <span asp-validation-for="Parcel.Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parcel.Length" class="control-label"></label>
+                <input asp-for="Parcel.Length" class="form-control"/>
+                <span asp-validation-for="Parcel.Length" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parcel.Width" class="control-label"></label>
+                <input asp-for="Parcel.Width" class="form-control"/>
+                <span asp-validation-for="Parcel.Width" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parcel.Height" class="control-label"></label>
+                <input asp-for="Parcel.Height" class="form-control"/>
+                <span asp-validation-for="Parcel.Height" class="text-danger"></span>
+            </div>
+        }
+        <div class="form-group">
+            <label asp-for="Parcel.Status" class="control-label"></label>
+            <br>
+            @Html.DropDownListFor(model => model.Parcel.Status, Model.Status)
+        </div>
+        @if (User.IsInRole("Admin") || User.IsInRole("Employee"))
+        {
+            <div class="form-group">
+                <input type="checkbox" asp-for="Parcel.Fragile"/>
+                @Html.DisplayNameFor(m => m.Parcel.Fragile)
+            </div>
+        }
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

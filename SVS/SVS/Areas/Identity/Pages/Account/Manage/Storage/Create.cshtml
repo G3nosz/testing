@@ -1,0 +1,404 @@
+﻿@page
+@model SVS.Areas.Identity.Pages.Account.Manage.Storage.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+
+    .parcel-form {
+        background: rgba(6, 26, 87, 0.95);
+        border-image: linear-gradient(to bottom, rgb(41, 151, 237), rgba(0, 0, 0, 0)) 1 100%;
+        border-style: solid;
+        border-width: 5px;
+        box-sizing: border-box;
+        height: auto;
+        padding: 50px 40px;
+        transform: translate(0%, -20%);
+        width: 450px;
+    }
+
+    .parcel-form input[type="button"] {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .avatar {
+        border-radius: 50%;
+        height: 80px;
+        left: calc(50% - 40px);
+        overflow: hidden;
+        position: absolute;
+        top: calc(-80px / 2);
+        width: 80px;
+    }
+
+    .parcel-form select {
+        background: transparent;
+        color: white;
+        font-family: 'Lato', sans-serif;
+        height: 40px;
+        width: 360px;
+    }
+
+    .parcel-form select:focus {
+        background-color: rgba(6, 26, 87, 0.95);
+        color: white;
+    }
+
+
+
+
+    .parcel-form h2 {
+        color: #fff;
+        margin: 0;
+        padding: 0 0 20px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+
+
+    .parcel-form p {
+        color: #fff;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+    }
+
+    button {
+        background-color: #2e94d0;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        display: inline-block;
+        font-size: 16px;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    button:hover { background-color: #4ebeff; }
+
+
+    .error { color: rgb(211, 32, 32); }
+
+    .parcel-form input[type="text"],
+    .parcel-form input[type="password"],
+    .parcel-form input[type="email"],
+    .parcel-form input[type="tel"] {
+        background: transparent;
+        background-color: none;
+        border: none;
+        border-bottom: 1px solid #fff;
+        color: #fff;
+        font-size: 16px;
+        height: 40px;
+        outline: none;
+        outline: none;
+    }
+
+    .parcel-form button[type="submit"] {
+        margin-top: 15%;
+        right: 100px;
+    }
+
+    .parcel-form a {
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    input[type="checkbox"] {
+        transform: scale(1.5);
+        width: 10%;
+    }
+
+    .tab { display: none; }
+
+    #progressbar {
+        /*CSS counters to number the steps*/
+        counter-reset: step;
+        margin-bottom: 30px;
+        overflow: hidden;
+        transition: all 0.5s ease;
+    }
+
+    #progressbar li {
+        color: white;
+        float: left;
+        font-family: 'Lato', sans-serif;
+        font-family: 'Lato', sans-serif;
+        font-size: 12px;
+        list-style-type: none;
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+        width: 33.33%;
+    }
+
+    #progressbar li:before {
+        background: rgb(225, 242, 255);
+        border-radius: 3px;
+        color: #333;
+        content: counter(step);
+        counter-increment: step;
+        display: block;
+        font-size: 18px;
+        font-weight: 900;
+        line-height: 20px;
+        margin: 0 auto 5px auto;
+        text-align: center;
+        width: 30px;
+    }
+
+    /*progressbar connectors*/
+
+    #progressbar li:after {
+        background: white;
+        content: '';
+        height: 2px;
+        left: -50%;
+        position: absolute;
+        top: 9px;
+        transition: all 0.5s ease;
+        width: 100%;
+        z-index: -1; /*put it behind the numbers*/
+    }
+
+    #progressbar li:first-child:after {
+        /*connector not needed before the first step*/
+        content: none;
+    }
+
+    /*marking active/completed steps green*/
+
+    /*The number of the step and the connector before it = green*/
+
+    #progressbar li.active:before, #progressbar li.active:after {
+        background: #27AE60;
+        color: white;
+        transition: all 0.5s ease;
+    }
+</style>
+
+<div class="parcel-form">
+    <img src="https://www.pngfind.com/pngs/m/535-5350732_ttap-order-form-order-icon-png-blue-transparent.png" class="avatar">
+    <h2>Create parcel</h2>
+    <ul id="progressbar">
+        <li class="active">Sender</li>
+        <li>Receiver</li>
+        <li>Parcel</li>
+    </ul>
+
+    <form id="regForm" method="post">
+        <div class="tab" id="Parcel.Sender">
+            <div class="form-group">
+                <label asp-for="Parcel.Sender.Name" class="control-label"></label>
+                <input asp-for="Parcel.Sender.Name" class="form-control"/>
+                <label class="error"></label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parcel.Sender.Address" class="control-label"></label>
+                <input asp-for="Parcel.Sender.Address" class="form-control"/>
+                <label class="error"></label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parcel.Sender.Email" class="control-label"></label>
+                <input asp-for="Parcel.Sender.Email" id="email" class="form-control"/>
+                <label class="error"></label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parcel.Sender.PhoneNumber" class="control-label"></label>
+                <input asp-for="Parcel.Sender.PhoneNumber" id="phone" class="form-control"/>
+                <label class="error"></label>
+            </div>
+        </div>
+        <div class="tab" id="Parcel.Receiver">
+            <div class="form-group">
+                <label asp-for="Parcel.Receiver.Name" class="control-label"></label>
+                <input asp-for="Parcel.Receiver.Name" class="form-control"/>
+                <label class="error"></label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parcel.Receiver.Address" class="control-label"></label>
+                <input asp-for="Parcel.Receiver.Address" class="form-control"/>
+                <label class="error"></label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parcel.Receiver.Email" class="control-label"></label>
+                <input asp-for="Parcel.Receiver.Email" id="email" class="form-control"/>
+                <label class="error"></label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parcel.Receiver.PhoneNumber" class="control-label"></label>
+                <input asp-for="Parcel.Receiver.PhoneNumber" id="phone" class="form-control"/>
+                <label class="error"></label>
+            </div>
+        </div>
+        <div class="tab" id="parcel">
+            <div class="form-group">
+                <label asp-for="Parcel.Weight" class="control-label"></label>
+                <input asp-for="Parcel.Weight" class="form-control"/>
+                <label class="error"></label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parcel.Length" class="control-label"></label>
+                <input asp-for="Parcel.Length" class="form-control"/>
+                <label class="error"></label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parcel.Width" class="control-label"></label>
+                <input asp-for="Parcel.Width" class="form-control"/>
+                <label class="error"></label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parcel.Height" class="control-label"></label>
+                <input asp-for="Parcel.Height" class="form-control"/>
+                <label class="error"></label>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <input asp-for="Parcel.Fragile"/>
+                    @Html.DisplayNameFor(m => m.Parcel.Fragile)
+                </div>
+            </div>
+        </div>
+        <div id="buttons" style="margin-left: 150px; overflow: auto;">
+            <div style="float: left;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+
+<script>
+    var currentTab = 0;
+    showTab(currentTab);
+    var clicked = false;
+
+    function showTab(n) {
+        var x = document.getElementsByClassName("tab");
+        x[n].style.display = "block";
+
+        if (n == 0) {
+            document.getElementById("prevBtn").style.display = "none";
+            document.getElementById("buttons").style.marginLeft = "150px";
+        } else {
+            document.getElementById("prevBtn").style.display = "inline";
+            document.getElementById("buttons").style.marginLeft = "100px";
+
+        }
+
+        if (n == (x.length - 1)) {
+            document.getElementById("nextBtn").innerHTML = "Submit";
+        } else {
+            document.getElementById("nextBtn").innerHTML = "Next";
+        }
+        fixStepIndicator(n);
+    }
+
+    function nextPrev(n) {
+        var x = document.getElementsByClassName("tab");
+        if (n == 1 && !validateForm()) return false;
+
+        x[currentTab].style.display = "none";
+
+        currentTab = currentTab + n;
+        if (currentTab >= x.length && clicked === false) {
+            document.getElementById("regForm").submit();
+            showTab(2);
+            clicked = true;
+            return false;
+        }
+        showTab(currentTab);
+    }
+
+    function validateForm() {
+        var x, y, i, valid = true;
+        x = document.getElementsByClassName("tab");
+        y = x[currentTab].getElementsByTagName("input");
+        var mailformat = /^\w+([\.-]?\w+)*@@\w+([\.-]?\w+)*(\.\w{1,6})+$/;
+        var phoneFormat = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+        var float = new RegExp("^\\d+(.\\d{1,2})?$");
+        if (x[currentTab].id === "Parcel.Sender") {
+            for (i = 0; i < y.length; i++) {
+                var label = x[currentTab].getElementsByClassName('error');
+                if (y[i].value.length <= 0) {
+                    label[i].innerHTML = "Field is required";
+                    y[i].className += " invalid";
+                    valid = false;
+                } else if (y[i].id === "email" && (mailformat.test(y[i].value) === false)) {
+                    label[i].innerHTML = "Invalid Email";
+                    y[i].className += " invalid";
+                    valid = false;
+
+                } else if (y[i].id === "phone" && (phoneFormat.test(y[i].value) === false)) {
+                    label[i].innerHTML = "Invalid Phone Number";
+                    y[i].className += " invalid";
+                    valid = false;
+                } else {
+                    label[i].innerHTML = "";
+                }
+            }
+        }
+
+        if (x[currentTab].id === "Parcel.Receiver") {
+            for (i = 0; i < y.length; i++) {
+                var label = x[currentTab].getElementsByClassName('error');
+                if (y[i].value.length <= 0) {
+                    label[i].innerHTML = "Field is required";
+                    y[i].className += " invalid";
+                    valid = false;
+                } else if (y[i].id === "email" && (mailformat.test(y[i].value) === false)) {
+                    label[i].innerHTML = "Invalid Email";
+                    y[i].className += " invalid";
+                    valid = false;
+
+                } else if (y[i].id === "phone" && (phoneFormat.test(y[i].value) === false)) {
+                    label[i].innerHTML = "Invalid Phone Number";
+                    y[i].className += " invalid";
+                    valid = false;
+                } else {
+                    label[i].innerHTML = "";
+                }
+            }
+        }
+        if (x[currentTab].id === "parcel") {
+
+            for (i = 0; i < y.length - 1; i++) {
+
+                var label = x[currentTab].getElementsByClassName('error');
+                if (y[i].value.length <= 0) {
+                    label[i].innerHTML = "Field is required";
+                    y[i].className += " invalid";
+                    valid = false;
+                } else if (float.test(y[i].value) === false && (y[i].value !== "true" && y[i].value !== "false")) {
+                    y[i].className += " invalid";
+                    label[i].innerHTML = "Invalid value";
+                    valid = false;
+
+                } else if (y[i].value.length > 6) {
+                    y[i].className += " invalid";
+                    label[i].innerHTML = "Value is too high";
+                    valid = false;
+                } else {
+                    label[i].innerHTML = "";
+                }
+            }
+        }
+        return valid;
+    }
+
+    function fixStepIndicator(n) {
+        $("#progressbar li").eq(n + 1).removeClass("active");
+        $("#progressbar li").eq(n).addClass("active");
+    }
+</script>

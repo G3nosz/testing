@@ -1,0 +1,123 @@
+﻿body {
+    background: url("../images/bg_blur.png") no-repeat fixed center center;
+    font-family: 'Lato', sans-serif;
+}
+
+
+
+.contact-form {
+    background: rgba(6, 26, 87, 0.95);
+    border-image: linear-gradient(to bottom, rgb(41, 151, 237), rgba(0, 0, 0, 0)) 1 100%;
+    border-style: solid;
+    border-width: 5px;
+    box-sizing: border-box;
+    height: auto;
+    padding: 50px 40px;
+    transform: translate(0%, -10%);
+    width: 450px;
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 80px;
+    left: calc(50% - 40px);
+    overflow: hidden;
+    position: absolute;
+    top: calc(-80px / 2);
+    width: 80px;
+}
+
+.contact-form select {
+    background: transparent;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    height: 40px;
+    width: 360px;
+}
+
+.contact-form select:focus {
+    background-color: rgba(6, 26, 87, 0.95);
+    color: white;
+}
+
+
+
+
+.contact-form h2 {
+    color: #fff;
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+
+.contact-form p {
+    color: #fff;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+
+.contact-form input {
+    margin-bottom: 20px;
+    outline: none;
+    width: 100%;
+}
+
+
+.contact-form input[type="text"],
+.contact-form input[type="password"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"] {
+    background: transparent;
+    background-color: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    height: 40px;
+    outline: none;
+    outline: none;
+}
+
+.contact-form input[type="text"] {
+    background: transparent;
+    background-color: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    height: 40px;
+    outline: none;
+    outline: none;
+}
+
+.contact-form input {
+    background: transparent;
+    background-color: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    height: 40px;
+    outline: none;
+}
+
+
+button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    width:auto;
+}
+
+.contact-form a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+input[type="checkbox"] { width: 20%; }
