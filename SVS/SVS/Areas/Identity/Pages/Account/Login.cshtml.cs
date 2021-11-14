@@ -67,14 +67,15 @@
                 var result = await _signInManager.PasswordSignInAsync(this.Input.Username,
                                                                       this.Input.Password,
                                                                       this.Input.RememberMe,
-                                                                      false);
-                if (result.Succeeded)
+                                                                      false); //taip pat per cia yra atliekamas tikrinimas ar useris gali prisijungti ar ne
+
+                if (result.Succeeded) //jeigu visi duomenys atitinka tuomet gali prisijungti
                 {
                     _logger.LogInformation("User logged in.");
                     return LocalRedirect(returnUrl);
                 }
 
-                this.ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                this.ModelState.AddModelError(string.Empty, "Invalid login attempt.");//kitu atveju tuomet yra nesekmingas prisijungimas
                 return Page();
             }
 

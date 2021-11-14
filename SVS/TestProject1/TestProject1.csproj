@@ -19,4 +19,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SVS\SVS.csproj" />
+  </ItemGroup>
+
 </Project>
