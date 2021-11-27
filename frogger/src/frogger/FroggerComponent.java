@@ -9,13 +9,13 @@ import java.util.logging.Logger;
 
 public class FroggerComponent extends JComponent implements KeyListener, Runnable {
 
-    private FroggerLevelEngine engine;
+    public FroggerLevelEngine engine;
     private boolean upPressed, downPressed, leftPressed, rightPressed;
     public static Vector<FroggerLevel> levels = new Vector();
-    private int level = 0;
+    public int level = 0;
     //private JLabel l;
-    private int life=5;
-    private int score = 0;
+    public int life=5;
+    public int score = 0;
     private int highscore = readPreference();
     private static final String HIGHSCORE = "highscore1";
 

@@ -8,7 +8,7 @@ public class FroggerLevelEngine
 
 	private TrafficPattern[] traffic;
 	private Frog frog;
-	private FroggerState state = FroggerState.MOVING;
+	public FroggerState state = FroggerState.MOVING;
 
 	public FroggerLevelEngine(int[] speeds, String[] patterns)
 	{
