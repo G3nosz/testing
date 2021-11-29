@@ -8,20 +8,6 @@ import org.junit.Before;
 import org.junit.Test;
 import frogger.*;
 
-
-//TODO - ka galima istestint listas:
-/*
- * FroggerComponent.java - {
- * 	1. level
- * 	2. life
- * 	3. score
- * 	4.FroggerState - all states
- * 	5. lab1, lab2, lab3 - skirtinguose leveliuose?
- * }
- * FroggerLevelEngine - su update kaip su trafic intersects, moveup, down ir .t.t. tai cia realiai paliestu ir Frog.java
- *  TrafficPattern - su speed ar nesugriaus zaidimo, nes limito setinimui speedo nera realiai kaip ir bounds, o intersects su frog jau butu ankstesniame testas
- * 
- * */
 public class Index {
 
 	@Test
