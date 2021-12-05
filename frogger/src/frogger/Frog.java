@@ -62,10 +62,18 @@ public class Frog
 		g.setColor(COLOR);
 		g.fillOval(x-RADIUS, y-RADIUS, RADIUS*2, RADIUS*2);
 	}
-        public void drawLevel(Graphics g,int levelNumber)
-        {
-            String level="LEVEL "+levelNumber;
-            g.setColor(COLOR);
-            g.drawString(level,300,400);
-        }
+    public void drawLevel(Graphics g,int levelNumber)
+    {
+        String level="LEVEL "+levelNumber;
+        g.setColor(COLOR);
+        g.drawString(level,300,400);
+    }
+       
+    public int GetX() {
+    	return this.x;
+    }
+        
+    public int GetY() {
+    	return this.y;
+    }
 }
