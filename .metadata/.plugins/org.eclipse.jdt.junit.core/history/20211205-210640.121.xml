@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Rerun onVictory()" project="frogger" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="tests.Index" incomplete="true" displayname="Index" uniqueid="[engine:junit-jupiter]/[class:tests.Index]">
+    <testcase name="onVictory" classname="tests.Index" incomplete="true" displayname="onVictory()" uniqueid="[engine:junit-jupiter]/[class:tests.Index]/[method:onVictory()]"/>
+  </testsuite>
+</testrun>
