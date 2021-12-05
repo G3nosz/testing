@@ -1,10 +1,15 @@
 package tests;
 
+import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.awt.AWTException;
+
 
 import org.junit.jupiter.api.Test;
 import frogger.FroggerComponent;
 import frogger.FroggerState;
+import frogger.PlayFrogger;
 
 public class Testing_FrogMovement {
 	@Test

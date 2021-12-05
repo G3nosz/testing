@@ -3,7 +3,6 @@ package tests;
 import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
 import java.util.stream.Stream;
 
 import org.junit.jupiter.params.ParameterizedTest;

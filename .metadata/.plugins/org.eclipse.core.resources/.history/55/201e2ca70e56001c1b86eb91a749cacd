@@ -3,6 +3,7 @@ package tests;
 import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 import java.util.stream.Stream;
 
 import org.junit.jupiter.params.ParameterizedTest;
@@ -10,22 +11,22 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import frogger.*;
 
-public class Testing_ScoreChange {
+public class Testing_LivesChange {
 	@ParameterizedTest
 	@MethodSource("inputStream")
-	void LevelChanges(int victory, int expected) {
+	void LevelChanges(int hitCount, int expected) {
 		PlayFrogger froggerPlay = new PlayFrogger();
 		FroggerComponent comp = new FroggerComponent();
-		comp.engine.state = FroggerState.WON;
+		comp.engine.state = FroggerState.HIT;
 		
 		try {
-			while(victory > 0) {
+			while(hitCount > 0) {
 				comp.update();
-				comp.engine.state = FroggerState.WON;
-				victory--;
+				comp.engine.state = FroggerState.HIT;
+				hitCount--;
 			}
 			
-			assertEquals(expected, comp.score);
+			assertEquals(expected, comp.life);
 		} catch (InterruptedException e) {
 			fail("Test failed: InterruptedException");
 			e.printStackTrace();
@@ -34,16 +35,14 @@ public class Testing_ScoreChange {
 	
 	private static Stream<Arguments> inputStream(){
 		return Stream.of(
-			Arguments.of(0, 0),
-			Arguments.of(1, 300),
-			Arguments.of(2, 600),
-			Arguments.of(3, 900),
-			Arguments.of(4, 1200),
-			Arguments.of(5, 1500),
-			Arguments.of(6, 1800),
-			Arguments.of(7, 2100),
-			Arguments.of(8, 2400),
-			Arguments.of(9, 2700)
+			Arguments.of(0, 5),
+			Arguments.of(1, 4),
+			Arguments.of(2, 3),
+			Arguments.of(3, 2),
+			Arguments.of(4, 1),
+			Arguments.of(5, 0),
+			Arguments.of(6, 5),
+			Arguments.of(7, 4)
 		);
 	}
 }
