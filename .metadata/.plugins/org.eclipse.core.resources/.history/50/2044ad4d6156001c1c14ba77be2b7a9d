@@ -31,6 +31,7 @@ public class Testing_FrogDies {
 			e.printStackTrace();
 		}
 		
+		//testing if after it dies it restarts to lvl 0
 		comp.engine.state = FroggerState.HIT;
 		comp.life = 0;
 		try {

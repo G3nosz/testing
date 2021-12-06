@@ -8,16 +8,15 @@ import frogger.FroggerComponent;
 import frogger.FroggerState;
 
 public class Testing_FrogMovement {
-	//Problema jei as taip pasidarau as gaunu NullPointerException
-//	private FroggerComponent comp;
-//	
-//	@Before
-//	void doBeforeTest_ () {
-//		comp = new FroggerComponent();
-//	}
+	private FroggerComponent comp;
+	
+	@Before
+	void doBeforeTest_ () {
+		comp = new FroggerComponent();
+	}
 	@Test
 	void Frog_MoveDown(){
-		FroggerComponent comp = new FroggerComponent();
+//		FroggerComponent comp = new FroggerComponent();
 		comp.engine.state = FroggerState.MOVING;
 		int expectedX = comp.engine.frog.GetX();
 		int expectedY = comp.engine.frog.GetY();

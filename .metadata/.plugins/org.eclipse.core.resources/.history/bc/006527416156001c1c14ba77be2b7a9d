@@ -19,6 +19,7 @@ public class Testing_FrogDies {
 		FroggerComponent comp = new FroggerComponent();
 		comp.engine.state = FroggerState.WON;
 		
+		
 		//need to reach further level from 1
 		try {
 			while(comp.level != victory) {
@@ -31,6 +32,7 @@ public class Testing_FrogDies {
 			e.printStackTrace();
 		}
 		
+		//testing if after it dies it restarts to lvl 0
 		comp.engine.state = FroggerState.HIT;
 		comp.life = 0;
 		try {
