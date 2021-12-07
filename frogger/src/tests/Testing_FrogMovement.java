@@ -2,22 +2,21 @@ package tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.After;
 import org.junit.Before;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import frogger.FroggerComponent;
 import frogger.FroggerState;
 
 public class Testing_FrogMovement {
-	//Problema jei as taip pasidarau as gaunu NullPointerException
-//	private FroggerComponent comp;
-//	
-//	@Before
-//	void doBeforeTest_ () {
-//		comp = new FroggerComponent();
-//	}
+	public FroggerComponent comp = null;
+	
+	@Before
+	public void setup() {
+		this.comp = new FroggerComponent();
+	}
 	@Test
-	void Frog_MoveDown(){
-		FroggerComponent comp = new FroggerComponent();
+	public void Frog_MoveDown(){
 		comp.engine.state = FroggerState.MOVING;
 		int expectedX = comp.engine.frog.GetX();
 		int expectedY = comp.engine.frog.GetY();
@@ -26,10 +25,18 @@ public class Testing_FrogMovement {
 		assertEquals(expectedX, comp.engine.frog.GetX());
 		assertEquals(expectedY, comp.engine.frog.GetY());
 	}
+	@After
+	public void close() {
+		comp = null;
+	}
+	
+	@Before
+	public void setup2() {
+		this.comp = new FroggerComponent();
+	}
 	
 	@Test
-	void Frog_MoveUp() {
-		FroggerComponent comp = new FroggerComponent();
+	public void Frog_MoveUp() {
 		comp.engine.state = FroggerState.MOVING;
 		int expectedX = comp.engine.frog.GetX();
 		int expectedY = comp.engine.frog.GetY() - 4;
@@ -39,10 +46,18 @@ public class Testing_FrogMovement {
 		assertEquals(expectedX, comp.engine.frog.GetX());
 		assertEquals(expectedY, comp.engine.frog.GetY());
 	}
+	@After
+	public void close2() {
+		comp = null;
+	}
+	
+	@Before
+	public void setup3() {
+		this.comp = new FroggerComponent();
+	}
 	
 	@Test
-	void Frog_MoveLeft() {
-		FroggerComponent comp = new FroggerComponent();
+	public void Frog_MoveLeft() {
 		comp.engine.state = FroggerState.MOVING;
 		int expectedX = comp.engine.frog.GetX() - 4;
 		int expectedY = comp.engine.frog.GetY();
@@ -53,10 +68,18 @@ public class Testing_FrogMovement {
 		assertEquals(expectedY, comp.engine.frog.GetY());
 	}
 	
+	@After
+	public void close3() {
+		comp = null;
+	}
+	
+	@Before
+	public void setup4() {
+		this.comp = new FroggerComponent();
+	}
 	
 	@Test
-	void Frog_MoveRight() {
-		FroggerComponent comp = new FroggerComponent();
+	public void Frog_MoveRight() {
 		comp.engine.state = FroggerState.MOVING;
 		int expectedX = comp.engine.frog.GetX() + 4;
 		int expectedY = comp.engine.frog.GetY();
@@ -65,6 +88,11 @@ public class Testing_FrogMovement {
 		
 		assertEquals(expectedX, comp.engine.frog.GetX());
 		assertEquals(expectedY, comp.engine.frog.GetY());
+	}
+	
+	@After
+	public void close4() {
+		comp = null;
 	}
 	
 }
