@@ -1,7 +1,0 @@
-package tests;
-
-import org.junit.jupiter.api.extension.*;
-
-public class SystemExitExtension implements BeforeEachCallback, AfterEachCallback, TestExecutionExceptionHandler {
- 
-}

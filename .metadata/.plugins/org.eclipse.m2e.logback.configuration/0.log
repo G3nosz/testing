@@ -1768,3 +1768,16 @@ java.util.ConcurrentModificationException: null
 2021-12-07 03:09:14,643 [Worker-71: Launching tests] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Meðka\Desktop\TESTAVIMAS_FROGGER\frogger\src\main\resources
 2021-12-07 03:09:14,645 [Worker-71: Launching tests] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1257 actually) to copy filtered resources, i.e. build is platform dependent!
 2021-12-07 03:09:14,646 [Worker-71: Launching tests] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Meðka\Desktop\TESTAVIMAS_FROGGER\frogger\src\test\resources
+2021-12-13 14:22:28,388 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2021-12-13 14:22:33,851 [Worker-4: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: frogger:frogger:0.0.1-SNAPSHOT @ C:\Users\Matas\Documents\GitHub\testing\frogger\pom.xml.
+2021-12-13 14:22:33,851 [Worker-11: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: frogger:frogger:0.0.1-SNAPSHOT @ C:\Users\Matas\Documents\GitHub\testing\frogger\pom.xml.
+2021-12-13 14:22:35,779 [Worker-4: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-13 14:22:35,780 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matas\Documents\GitHub\testing\frogger\src\main\resources
+2021-12-13 14:22:35,783 [Worker-4: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-13 14:22:35,785 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matas\Documents\GitHub\testing\frogger\src\test\resources
+2021-12-13 14:22:37,281 [Worker-12: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: frogger:frogger:0.0.1-SNAPSHOT @ C:\Users\Matas\Documents\GitHub\testing\frogger\pom.xml.
+2021-12-13 14:22:38,026 [Worker-27: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-13 14:22:38,028 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matas\Documents\GitHub\testing\frogger\src\main\resources
+2021-12-13 14:22:38,030 [Worker-27: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-13 14:22:38,030 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matas\Documents\GitHub\testing\frogger\src\test\resources
+2021-12-13 14:32:09,766 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

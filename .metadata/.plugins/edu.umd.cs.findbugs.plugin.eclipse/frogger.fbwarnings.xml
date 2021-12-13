@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="3" timestamp="1639398984298" analysisTimestamp="1639398982795" release="">
+  <Project projectName="frogger">
+    <Jar>C:\Users\Matas\Documents\GitHub\testing\frogger\target\classes\frogger</Jar>
+    <AuxClasspathEntry>C:\Users\Matas\Documents\GitHub\testing\frogger\target\classes</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Matas\.p2\pool\plugins\org.junit.jupiter.api_5.7.1.v20210222-1948.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Matas\.p2\pool\plugins\org.junit.jupiter.engine_5.7.1.v20210222-1948.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Matas\.p2\pool\plugins\org.junit.jupiter.migrationsupport_5.7.1.v20210222-1948.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Matas\.p2\pool\plugins\org.junit.jupiter.params_5.7.1.v20210222-1948.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Matas\.p2\pool\plugins\org.junit.platform.commons_1.7.1.v20210222-1948.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Matas\.p2\pool\plugins\org.junit.platform.engine_1.7.1.v20210222-1948.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Matas\.p2\pool\plugins\org.junit.platform.launcher_1.7.1.v20210222-1948.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Matas\.p2\pool\plugins\org.junit.platform.runner_1.7.1.v20210222-1948.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Matas\.p2\pool\plugins\org.junit.platform.suite.api_1.7.1.v20210222-1948.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Matas\.p2\pool\plugins\org.junit.vintage.engine_5.7.1.v20210222-1948.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Matas\.p2\pool\plugins\org.opentest4j_1.2.0.v20190826-0900.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Matas\.p2\pool\plugins\org.apiguardian_1.1.0.v20190826-0900.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Matas\.p2\pool\plugins\org.junit_4.13.0.v20200204-1500.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Matas\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jdk1.8.0_181\jre\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\Matas\Documents\GitHub\testing\frogger\src</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="EQ_DOESNT_OVERRIDE_EQUALS" priority="2" rank="17" abbrev="Eq" category="STYLE" first="1">
+    <Class classname="frogger.Car">
+      <SourceLine classname="frogger.Car" sourcefile="Car.java" sourcepath="frogger/Car.java"/>
+    </Class>
+    <SourceLine classname="frogger.Car" start="1" end="1" startBytecode="0" endBytecode="0" sourcefile="Car.java" sourcepath="frogger/Car.java"/>
+    <Method classname="java.awt.Rectangle" name="equals" signature="(Ljava/lang/Object;)Z" isStatic="false" role="METHOD_DID_YOU_MEAN_TO_OVERRIDE">
+      <SourceLine classname="java.awt.Rectangle" start="1197" end="1204" startBytecode="0" endBytecode="122" sourcefile="Rectangle.java" sourcepath="java/awt/Rectangle.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="frogger.Frog">
+      <SourceLine classname="frogger.Frog" sourcefile="Frog.java" sourcepath="frogger/Frog.java"/>
+    </Class>
+    <Method classname="frogger.Frog" name="GetX" signature="()I" isStatic="false">
+      <SourceLine classname="frogger.Frog" start="73" end="73" startBytecode="0" endBytecode="46" sourcefile="Frog.java" sourcepath="frogger/Frog.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="frogger.Frog">
+      <SourceLine classname="frogger.Frog" sourcefile="Frog.java" sourcepath="frogger/Frog.java"/>
+    </Class>
+    <Method classname="frogger.Frog" name="GetY" signature="()I" isStatic="false">
+      <SourceLine classname="frogger.Frog" start="77" end="77" startBytecode="0" endBytecode="46" sourcefile="Frog.java" sourcepath="frogger/Frog.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="DM_EXIT" priority="2" rank="16" abbrev="Dm" category="BAD_PRACTICE" first="1">
+    <Class classname="frogger.FroggerComponent">
+      <SourceLine classname="frogger.FroggerComponent" sourcefile="FroggerComponent.java" sourcepath="frogger/FroggerComponent.java"/>
+    </Class>
+    <Method classname="frogger.FroggerComponent" name="update" signature="()V" isStatic="false">
+      <SourceLine classname="frogger.FroggerComponent" start="116" end="300" startBytecode="0" endBytecode="2130" sourcefile="FroggerComponent.java" sourcepath="frogger/FroggerComponent.java"/>
+    </Method>
+    <SourceLine classname="frogger.FroggerComponent" start="157" end="157" startBytecode="236" endBytecode="236" sourcefile="FroggerComponent.java" sourcepath="frogger/FroggerComponent.java"/>
+    <SourceLine classname="frogger.FroggerComponent" start="157" end="157" startBytecode="236" endBytecode="236" sourcefile="FroggerComponent.java" sourcepath="frogger/FroggerComponent.java"/>
+  </BugInstance>
+  <BugInstance type="MS_SHOULD_BE_FINAL" priority="1" rank="16" abbrev="MS" category="MALICIOUS_CODE" first="1">
+    <Class classname="frogger.FroggerComponent">
+      <SourceLine classname="frogger.FroggerComponent" sourcefile="FroggerComponent.java" sourcepath="frogger/FroggerComponent.java"/>
+    </Class>
+    <Field classname="frogger.FroggerComponent" name="levels" signature="Ljava/util/Vector;" isStatic="true">
+      <SourceLine classname="frogger.FroggerComponent" sourcefile="FroggerComponent.java" sourcepath="frogger/FroggerComponent.java"/>
+    </Field>
+    <SourceLine classname="frogger.FroggerComponent" start="14" end="14" startBytecode="7" endBytecode="7" sourcefile="FroggerComponent.java" sourcepath="frogger/FroggerComponent.java"/>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT" priority="2" rank="17" abbrev="RV" category="STYLE" first="1">
+    <Class classname="frogger.FroggerComponent">
+      <SourceLine classname="frogger.FroggerComponent" sourcefile="FroggerComponent.java" sourcepath="frogger/FroggerComponent.java"/>
+    </Class>
+    <Method classname="frogger.FroggerComponent" name="keyPressed" signature="(Ljava/awt/event/KeyEvent;)V" isStatic="false">
+      <SourceLine classname="frogger.FroggerComponent" start="312" end="326" startBytecode="0" endBytecode="174" sourcefile="FroggerComponent.java" sourcepath="frogger/FroggerComponent.java"/>
+    </Method>
+    <Method classname="java.awt.event.KeyEvent" name="getKeyCode" signature="()I" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.awt.event.KeyEvent" start="1104" end="1104" startBytecode="0" endBytecode="28" sourcefile="KeyEvent.java" sourcepath="java/awt/event/KeyEvent.java"/>
+    </Method>
+    <SourceLine classname="frogger.FroggerComponent" start="320" end="320" startBytecode="69" endBytecode="69" sourcefile="FroggerComponent.java" sourcepath="frogger/FroggerComponent.java"/>
+    <SourceLine classname="frogger.FroggerComponent" start="320" end="320" startBytecode="69" endBytecode="69" sourcefile="FroggerComponent.java" sourcepath="frogger/FroggerComponent.java"/>
+  </BugInstance>
+  <BugInstance type="SBSC_USE_STRINGBUFFER_CONCATENATION" priority="2" rank="18" abbrev="SBSC" category="PERFORMANCE" first="1">
+    <Class classname="frogger.FroggerComponent">
+      <SourceLine classname="frogger.FroggerComponent" sourcefile="FroggerComponent.java" sourcepath="frogger/FroggerComponent.java"/>
+    </Class>
+    <Method classname="frogger.FroggerComponent" name="update" signature="()V" isStatic="false">
+      <SourceLine classname="frogger.FroggerComponent" start="116" end="300" startBytecode="0" endBytecode="2130" sourcefile="FroggerComponent.java" sourcepath="frogger/FroggerComponent.java"/>
+    </Method>
+    <SourceLine classname="frogger.FroggerComponent" start="165" end="165" startBytecode="280" endBytecode="280" sourcefile="FroggerComponent.java" sourcepath="frogger/FroggerComponent.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="frogger.FroggerLevel">
+      <SourceLine classname="frogger.FroggerLevel" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+    </Class>
+    <Method classname="frogger.FroggerLevel" name="getPatterns" signature="()[Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="frogger.FroggerLevel" start="23" end="23" startBytecode="0" endBytecode="46" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+    </Method>
+    <Field classname="frogger.FroggerLevel" name="patterns" signature="[Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="frogger.FroggerLevel" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+    </Field>
+    <SourceLine classname="frogger.FroggerLevel" start="23" end="23" startBytecode="4" endBytecode="4" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+    <SourceLine classname="frogger.FroggerLevel" start="23" end="23" startBytecode="4" endBytecode="4" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="frogger.FroggerLevel">
+      <SourceLine classname="frogger.FroggerLevel" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+    </Class>
+    <Method classname="frogger.FroggerLevel" name="getSpeeds" signature="()[I" isStatic="false">
+      <SourceLine classname="frogger.FroggerLevel" start="18" end="18" startBytecode="0" endBytecode="46" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+    </Method>
+    <Field classname="frogger.FroggerLevel" name="speeds" signature="[I" isStatic="false">
+      <SourceLine classname="frogger.FroggerLevel" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+    </Field>
+    <SourceLine classname="frogger.FroggerLevel" start="18" end="18" startBytecode="4" endBytecode="4" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+    <SourceLine classname="frogger.FroggerLevel" start="18" end="18" startBytecode="4" endBytecode="4" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" first="1">
+    <Class classname="frogger.FroggerLevel">
+      <SourceLine classname="frogger.FroggerLevel" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+    </Class>
+    <Method classname="frogger.FroggerLevel" name="&lt;init&gt;" signature="([I[Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="frogger.FroggerLevel" start="10" end="14" startBytecode="0" endBytecode="88" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+    </Method>
+    <Field classname="frogger.FroggerLevel" name="patterns" signature="[Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="frogger.FroggerLevel" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+    </Field>
+    <LocalVariable name="patterns" register="2" pc="11" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="frogger.FroggerLevel" start="13" end="13" startBytecode="11" endBytecode="11" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+    <SourceLine classname="frogger.FroggerLevel" start="13" end="13" startBytecode="11" endBytecode="11" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" first="1">
+    <Class classname="frogger.FroggerLevel">
+      <SourceLine classname="frogger.FroggerLevel" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+    </Class>
+    <Method classname="frogger.FroggerLevel" name="&lt;init&gt;" signature="([I[Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="frogger.FroggerLevel" start="10" end="14" startBytecode="0" endBytecode="88" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+    </Method>
+    <Field classname="frogger.FroggerLevel" name="speeds" signature="[I" isStatic="false">
+      <SourceLine classname="frogger.FroggerLevel" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+    </Field>
+    <LocalVariable name="speeds" register="1" pc="6" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="frogger.FroggerLevel" start="12" end="12" startBytecode="6" endBytecode="6" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+    <SourceLine classname="frogger.FroggerLevel" start="12" end="12" startBytecode="6" endBytecode="6" sourcefile="FroggerLevel.java" sourcepath="frogger/FroggerLevel.java"/>
+  </BugInstance>
+  <BugInstance type="MS_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" first="1">
+    <Class classname="frogger.PlayFrogger">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Class>
+    <Field classname="frogger.PlayFrogger" name="c" signature="Lfrogger/Cronometro;" isStatic="true">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="MS_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" first="1">
+    <Class classname="frogger.PlayFrogger">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Class>
+    <Field classname="frogger.PlayFrogger" name="lab1" signature="Ljavax/swing/JLabel;" isStatic="true">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="MS_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" first="1">
+    <Class classname="frogger.PlayFrogger">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Class>
+    <Field classname="frogger.PlayFrogger" name="lab2" signature="Ljavax/swing/JLabel;" isStatic="true">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="MS_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" first="1">
+    <Class classname="frogger.PlayFrogger">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Class>
+    <Field classname="frogger.PlayFrogger" name="lab3" signature="Ljavax/swing/JLabel;" isStatic="true">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="MS_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" first="1">
+    <Class classname="frogger.PlayFrogger">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Class>
+    <Field classname="frogger.PlayFrogger" name="lab4" signature="Ljavax/swing/JLabel;" isStatic="true">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="1" rank="15" abbrev="ST" category="STYLE" first="1">
+    <Class classname="frogger.PlayFrogger">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Class>
+    <Method classname="frogger.PlayFrogger" name="&lt;init&gt;" signature="()V" isStatic="false">
+      <SourceLine classname="frogger.PlayFrogger" start="14" end="40" startBytecode="0" endBytecode="362" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Method>
+    <Field classname="frogger.PlayFrogger" name="lab1" signature="Ljavax/swing/JLabel;" isStatic="true">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Field>
+    <SourceLine classname="frogger.PlayFrogger" start="16" end="16" startBytecode="23" endBytecode="23" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    <SourceLine classname="frogger.PlayFrogger" start="16" end="16" startBytecode="23" endBytecode="23" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+  </BugInstance>
+  <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="2" rank="17" abbrev="ST" category="STYLE" first="1">
+    <Class classname="frogger.PlayFrogger">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Class>
+    <Method classname="frogger.PlayFrogger" name="&lt;init&gt;" signature="()V" isStatic="false">
+      <SourceLine classname="frogger.PlayFrogger" start="14" end="40" startBytecode="0" endBytecode="362" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Method>
+    <Field classname="frogger.PlayFrogger" name="c" signature="Lfrogger/Cronometro;" isStatic="true">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Field>
+    <SourceLine classname="frogger.PlayFrogger" start="23" end="23" startBytecode="123" endBytecode="123" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    <SourceLine classname="frogger.PlayFrogger" start="23" end="23" startBytecode="123" endBytecode="123" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+  </BugInstance>
+  <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="2" rank="17" abbrev="ST" category="STYLE" first="1">
+    <Class classname="frogger.PlayFrogger">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Class>
+    <Method classname="frogger.PlayFrogger" name="&lt;init&gt;" signature="()V" isStatic="false">
+      <SourceLine classname="frogger.PlayFrogger" start="14" end="40" startBytecode="0" endBytecode="362" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Method>
+    <Field classname="frogger.PlayFrogger" name="lab2" signature="Ljavax/swing/JLabel;" isStatic="true">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Field>
+    <SourceLine classname="frogger.PlayFrogger" start="18" end="18" startBytecode="53" endBytecode="53" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    <SourceLine classname="frogger.PlayFrogger" start="18" end="18" startBytecode="53" endBytecode="53" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+  </BugInstance>
+  <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="2" rank="17" abbrev="ST" category="STYLE" first="1">
+    <Class classname="frogger.PlayFrogger">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Class>
+    <Method classname="frogger.PlayFrogger" name="&lt;init&gt;" signature="()V" isStatic="false">
+      <SourceLine classname="frogger.PlayFrogger" start="14" end="40" startBytecode="0" endBytecode="362" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Method>
+    <Field classname="frogger.PlayFrogger" name="lab3" signature="Ljavax/swing/JLabel;" isStatic="true">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Field>
+    <SourceLine classname="frogger.PlayFrogger" start="19" end="19" startBytecode="65" endBytecode="65" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    <SourceLine classname="frogger.PlayFrogger" start="19" end="19" startBytecode="65" endBytecode="65" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+  </BugInstance>
+  <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="2" rank="17" abbrev="ST" category="STYLE" first="1">
+    <Class classname="frogger.PlayFrogger">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Class>
+    <Method classname="frogger.PlayFrogger" name="&lt;init&gt;" signature="()V" isStatic="false">
+      <SourceLine classname="frogger.PlayFrogger" start="14" end="40" startBytecode="0" endBytecode="362" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Method>
+    <Field classname="frogger.PlayFrogger" name="lab4" signature="Ljavax/swing/JLabel;" isStatic="true">
+      <SourceLine classname="frogger.PlayFrogger" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    </Field>
+    <SourceLine classname="frogger.PlayFrogger" start="21" end="21" startBytecode="95" endBytecode="95" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+    <SourceLine classname="frogger.PlayFrogger" start="21" end="21" startBytecode="95" endBytecode="95" sourcefile="PlayFrogger.java" sourcepath="frogger/PlayFrogger.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Mon, 13 Dec 2021 14:22:29 +0200" total_classes="11" referenced_classes="344" total_bugs="21" total_size="574" num_packages="1" java_version="13.0.1" vm_version="13.0.1+9" cpu_seconds="7.95" clock_seconds="1.51" peak_mbytes="505.70" alloc_mbytes="2048.00" gc_seconds="0.08" priority_2="19" priority_1="2">
+    <PackageStats package="frogger" total_bugs="21" total_types="11" total_size="574" priority_2="19" priority_1="2">
+      <ClassStats class="frogger.Car" sourceFile="Car.java" interface="false" size="21" bugs="1" priority_2="1"/>
+      <ClassStats class="frogger.Cronometro" sourceFile="Cronometro.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="frogger.Cronometro$1" sourceFile="Cronometro.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="frogger.Frog" sourceFile="Frog.java" interface="false" size="46" bugs="2" priority_2="2"/>
+      <ClassStats class="frogger.Frogger" sourceFile="Frogger.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="frogger.FroggerComponent" sourceFile="FroggerComponent.java" interface="false" size="258" bugs="4" priority_2="3" priority_1="1"/>
+      <ClassStats class="frogger.FroggerLevel" sourceFile="FroggerLevel.java" interface="false" size="12" bugs="4" priority_2="4"/>
+      <ClassStats class="frogger.FroggerLevelEngine" sourceFile="FroggerLevelEngine.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="frogger.FroggerState" sourceFile="FroggerState.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="frogger.PlayFrogger" sourceFile="PlayFrogger.java" interface="false" size="34" bugs="10" priority_2="9" priority_1="1"/>
+      <ClassStats class="frogger.TrafficPattern" sourceFile="TrafficPattern.java" interface="false" size="88" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="299" invocations="1599" avgMicrosecondsPerInvocation="187" maxMicrosecondsPerInvocation="20091" standardDeviationMircosecondsPerInvocation="778"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="144" invocations="1602" avgMicrosecondsPerInvocation="90" maxMicrosecondsPerInvocation="436" standardDeviationMircosecondsPerInvocation="34"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="140" invocations="344" avgMicrosecondsPerInvocation="409" maxMicrosecondsPerInvocation="8119" standardDeviationMircosecondsPerInvocation="815"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="137" invocations="344" avgMicrosecondsPerInvocation="400" maxMicrosecondsPerInvocation="6293" standardDeviationMircosecondsPerInvocation="727"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="106" invocations="802" avgMicrosecondsPerInvocation="132" maxMicrosecondsPerInvocation="11775" standardDeviationMircosecondsPerInvocation="508"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="85" invocations="2" avgMicrosecondsPerInvocation="42790" maxMicrosecondsPerInvocation="52108" standardDeviationMircosecondsPerInvocation="9319"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="42" invocations="344" avgMicrosecondsPerInvocation="123" maxMicrosecondsPerInvocation="1909" standardDeviationMircosecondsPerInvocation="212"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="38" invocations="344" avgMicrosecondsPerInvocation="112" maxMicrosecondsPerInvocation="11392" standardDeviationMircosecondsPerInvocation="626"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="27" invocations="73" avgMicrosecondsPerInvocation="378" maxMicrosecondsPerInvocation="7767" standardDeviationMircosecondsPerInvocation="1272"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="27" invocations="1550" avgMicrosecondsPerInvocation="17" maxMicrosecondsPerInvocation="583" standardDeviationMircosecondsPerInvocation="36"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="26" invocations="410" avgMicrosecondsPerInvocation="64" maxMicrosecondsPerInvocation="621" standardDeviationMircosecondsPerInvocation="86"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="26" invocations="344" avgMicrosecondsPerInvocation="75" maxMicrosecondsPerInvocation="6570" standardDeviationMircosecondsPerInvocation="467"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="24" invocations="344" avgMicrosecondsPerInvocation="70" maxMicrosecondsPerInvocation="672" standardDeviationMircosecondsPerInvocation="98"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1639398747475" release="" codeSize="0" numClasses="0"/>
+    <AppVersion sequence="1" timestamp="1639398747477" release="" codeSize="574" numClasses="11"/>
+    <AppVersion sequence="2" timestamp="1639398922235" release="" codeSize="574" numClasses="11"/>
+  </History>
+</BugCollection>
